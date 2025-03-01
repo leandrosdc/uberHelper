@@ -20,6 +20,7 @@ function initMap() {
                     center: userLocation,
                     zoom: 14,
                     mapId: "YOUR_MAP_ID", // Substitua pelo seu Map ID
+                    gestureHandling: "cooperative", // Permite rolagem da página
                 });
 
                 // Cria uma janela de informações

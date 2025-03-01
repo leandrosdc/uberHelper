@@ -68,6 +68,9 @@ header .subtitle {
 
 /* Mapa */
 #map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 24px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -112,4 +115,21 @@ footer {
     font-size: 12px;
     color: rgb(223, 233, 233); /* Letras claras */
     margin-top: 24px;
+}
+
+/* Ajustes para rolagem */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Permite rolagem da página */
+}
+
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto; /* Permite rolagem interna */
 }

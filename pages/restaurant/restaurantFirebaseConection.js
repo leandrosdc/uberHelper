@@ -14,31 +14,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Função para adicionar um estabelecimento
-export function addEstabelecimento(nome, tipo, horario, endereco) {
-  const estabelecimentosRef = ref(database, "estabelecimentos");
-  const novoEstabelecimentoRef = push(estabelecimentosRef);
-  return set(novoEstabelecimentoRef, {
-    nome: nome,
-    tipo: tipo,
-    horario: horario,
-    endereco: endereco
+export function addBusiness(name, type, hours, address) {
+  const businessesRef = ref(database, "businesses");
+  const newBusinessRef = push(businessesRef);
+  return set(newBusinessRef, {
+    name: name,
+    type: type,
+    hours: hours,
+    address: address
   });
 }
 
-// Função para buscar todos os estabelecimentos
-export async function getEstabelecimentos() {
-  const estabelecimentosRef = ref(database, "estabelecimentos");
+export async function getBusinesses() {
+  const businessesRef = ref(database, "businesses");
   try {
-    const snapshot = await get(child(estabelecimentosRef, "/"));
+    const snapshot = await get(child(businessesRef, "/"));
     if (snapshot.exists()) {
       return snapshot.val();
     } else {
-      console.log("Nenhum estabelecimento encontrado.");
+      console.log("No businesses found.");
       return {};
     }
   } catch (error) {
-    console.error("Erro ao buscar estabelecimentos:", error);
+    console.error("Error fetching businesses:", error);
     return {};
   }
 }

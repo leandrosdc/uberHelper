@@ -1,18 +1,18 @@
-/* Importação da fonte Roboto do Google Fonts */
+/* Roboto Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* Reset básico */
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos globais */
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(22, 22, 22); /* Fundo escuro */
-    color: rgb(223, 233, 233); /* Letras claras */
+    background-color: rgb(22, 22, 22); /* Dark background */
+    color: rgb(223, 233, 233); /* Light text */
     line-height: 1.6;
     padding: 20px;
     display: flex;
@@ -24,22 +24,22 @@ body {
     overflow: hidden;
 }
 
-/* Imagem de fundo (Uber logo) */
+/* Background image (Uber logo) */
 .background-image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca atrás de todo o conteúdo */
-    opacity: 0.04; /* Deixa a imagem mais suave */
+    z-index: -1; /* Places it behind all content */
+    opacity: 0.04; /* Makes the image softer */
     width: 80%;
-    max-width: 800px; /* Controla o tamanho da imagem */
+    max-width: 800px; /* Controls the image size */
 }
 
 .background-image img {
     width: 100%;
     height: auto;
-    filter: brightness(0.9) opacity(0.8); /* Escurece a imagem */
+    filter: brightness(0.9) opacity(0.8); /* Darkens the image */
 }
 
 /* Header */
@@ -47,42 +47,42 @@ header {
     text-align: center;
     margin-bottom: 24px;
     position: relative;
-    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+    z-index: 1; /* Ensures content stays above the background image */
 }
 
 header h1 {
     font-size: 24px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Container do ícone do carro */
+/* Car icon container */
 .car-container {
     position: relative;
     display: inline-block;
 }
 
 .car-icon {
-    width: 30px; /* Tamanho do ícone do carro */
+    width: 30px; /* Size of the car icon */
     height: auto;
     position: absolute;
-    top: -20px; /* Posiciona acima das letras */
+    top: -20px; /* Positions it above the text */
     left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    filter: brightness(0.9); /* Escurece o ícone do carro */
+    transform: translateX(-50%); /* Centers horizontally */
+    filter: brightness(0.9); /* Darkens the car icon */
 }
 
 header .subtitle {
     font-size: 14px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     max-width: 300px;
-    margin: 0 auto 16px; /* Aumenta o espaçamento abaixo */
+    margin: 0 auto 16px; /* Increases spacing below */
 }
 
-/* Botões */
+/* Buttons */
 .button-container {
     display: flex;
     flex-direction: column;
@@ -92,10 +92,10 @@ header .subtitle {
 }
 
 .btn-primary {
-    background-color: rgb(41, 41, 41); /* Fundo dos botões */
+    background-color: rgb(41, 41, 41); /* Button background */
     border-color: rgb(223, 233, 233);
     border-style: ridge;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     padding: 12px 24px;
     border-radius: 8px;
     font-size: 16px;
@@ -104,22 +104,22 @@ header .subtitle {
     width: 100%;
     text-align: center;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    text-decoration: none; /* Remove sublinhado dos links */
-    display: inline-block; /* Garante que o padding funcione corretamente */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    text-decoration: none; /* Removes underline from links */
+    display: inline-block; /* Ensures padding works correctly */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .btn-primary:hover {
-    background-color: #00CC66; /* Verde ao passar o mouse */
-    border-color: #00CC66; /* Muda a cor da borda ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+    background-color: #00CC66; /* Green on hover */
+    border-color: #00CC66; /* Changes border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
 }
 
-/* Linha de quebra */
+/* Divider line */
 hr.divider {
     border: none;
-    height: 2px; /* Mais grossa */
-    background-color: rgb(41, 41, 41); /* Cor da linha */
+    height: 2px; /* Thicker */
+    background-color: rgb(41, 41, 41); /* Line color */
     width: 100%;
     max-width: 300px;
     margin: 24px 0;
@@ -129,10 +129,10 @@ hr.divider {
 footer {
     text-align: center;
     font-size: 12px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
 }
 
-/* Media Queries para telas maiores */
+/* Media Queries for larger screens */
 @media (min-width: 768px) {
     header h1 {
         font-size: 32px;
@@ -158,6 +158,6 @@ footer {
     }
 
     .background-image {
-        max-width: 1000px; /* Ajusta o tamanho da imagem de fundo para telas maiores */
+        max-width: 1000px; /* Adjusts the background image size for larger screens */
     }
 }

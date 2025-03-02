@@ -1,12 +1,12 @@
 let userLocation;
 function initMap() {
-    console.log("Google Maps API carregada com sucesso!");
+    console.log("Google Maps API working!");
 }
 
 // Função para buscar os postos de gasolina
 function searchGasStations() {
     if (!window.google || !google.maps) {
-        console.error("Google Maps API ainda não carregada.");
+        console.error("Google Maps API not working.");
         return;
     }
 
@@ -18,7 +18,7 @@ function searchGasStations() {
                 position.coords.longitude
             );
 
-            console.log("Localização do usuário:", userLocation);
+            console.log("User location:", userLocation);
 
             const service = new google.maps.places.PlacesService(document.createElement("div"));
 
@@ -28,7 +28,7 @@ function searchGasStations() {
                 type: ["gas_station"],
             };
 
-            console.log("Enviando request para Nearby Search", request);
+            console.log("sending request to Nearby Search", request);
 
             service.nearbySearch(request, (results, status) => {
                 const gasStationList = document.getElementById("gasstation-list");
@@ -40,26 +40,26 @@ function searchGasStations() {
                         const address = place.vicinity;
                         const hours = place.opening_hours
                             ? place.opening_hours.weekday_text.join(", ")
-                            : "Horário não disponível";
+                            : "Time not available";
 
                         const li = document.createElement("li");
                         li.innerHTML = `
                             <strong>${name}</strong><br>
                             Endereço: ${address}<br>
-                            Horário de funcionamento: ${hours}
+                            Time: ${hours}
                         `;
                         gasStationList.appendChild(li);
                     });
                 } else {
-                    console.error("Erro na busca:", status);
+                    console.error("Search error:", status);
                     const li = document.createElement("li");
-                    li.innerHTML = `<p class="error">Nenhum posto encontrado</p>`;
+                    li.innerHTML = `<p class="error">No gas station found</p>`;
                     gasStationList.appendChild(li);
                 }
             });
         },
         (error) => {
-            console.error("Erro ao obter localização:", error);
+            console.error("Location error:", error);
         }
     );
 }
@@ -81,12 +81,12 @@ function getUserLocation() {
                 searchGasStations(userLocation);
             },
             (error) => {
-                console.error("Erro ao obter localização:", error);
-                alert("Não foi possível obter sua localização. Verifique as permissões do navegador.");
+                console.error("Location error:", error);
+                alert("Please check browser permissions.");
             }
         );
     } else {
-        alert("Seu navegador não suporta geolocalização.");
+        alert("Your browser does not have location.");
     }
 }
 
@@ -102,30 +102,29 @@ function searchGasStations(location) {
 
     service.nearbySearch(request, (results, status) => {
         const gasStationList = document.getElementById("gasstation-list");
-        gasStationList.innerHTML = ''; // Limpa a lista antes de adicionar novos itens
+        gasStationList.innerHTML = ''; 
 
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-            // Vamos limitar a 10 resultados
             results.slice(0, 10).forEach((place) => {
                 const name = place.name;
-                const address = place.vicinity; // Endereço completo
+                const address = place.vicinity; 
                 const hours = place.opening_hours
                     ? place.opening_hours.weekday_text.join(", ")
-                    : "Horário não disponível";
+                    : "No time";
 
                 // Cria e exibe a lista de postos
                 const li = document.createElement("li");
                 li.innerHTML = `
                     <strong>${name}</strong><br>
                     Endereço: ${address}<br>
-                    Horário de funcionamento: ${hours}
+                    Time: ${hours}
                 `;
                 gasStationList.appendChild(li);
             });
         } else {
-            console.error("Erro na busca:", status);
+            console.error("Search error:", status);
             const li = document.createElement("li");
-            li.innerHTML = `<p class="error">Nenhum posto encontrado</p>`;
+            li.innerHTML = `<p class="error">No gas station</p>`;
             gasStationList.appendChild(li);
         }
     });

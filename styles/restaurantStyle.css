@@ -1,8 +1,8 @@
-/* Estilos globais */
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(22, 22, 22); /* Fundo escuro */
-    color: rgb(223, 233, 233); /* Letras claras */
+    background-color: rgb(22, 22, 22); /* Dark background */
+    color: rgb(223, 233, 233); /* Light text */
     line-height: 1.6;
     padding: 20px;
     display: flex;
@@ -14,22 +14,22 @@ body {
     overflow: hidden;
 }
 
-/* Imagem de fundo (Uber logo) */
+/* Background image (Uber logo) */
 .background-image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca atrás de todo o conteúdo */
-    opacity: 0.04; /* Deixa a imagem mais suave */
+    z-index: -1; /* Places it behind all content */
+    opacity: 0.04; /* Makes the image softer */
     width: 80%;
-    max-width: 800px; /* Controla o tamanho da imagem */
+    max-width: 800px; /* Controls the image size */
 }
 
 .background-image img {
     width: 100%;
     height: auto;
-    filter: brightness(0.9) opacity(0.8); /* Escurece a imagem */
+    filter: brightness(0.9) opacity(0.8); /* Darkens the image */
 }
 
 /* Header */
@@ -37,12 +37,12 @@ header {
     text-align: center;
     margin-bottom: 24px;
     position: relative;
-    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+    z-index: 1; /* Ensures content stays above the background image */
 }
 
 header h1 {
     font-size: 24px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -50,23 +50,23 @@ header h1 {
 }
 
 .car-icon {
-    width: 30px; /* Tamanho do ícone do carro */
+    width: 30px; /* Size of the car icon */
     height: auto;
     position: absolute;
-    top: -20px; /* Posiciona acima das letras */
+    top: -20px; /* Positions it above the text */
     left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    filter: brightness(0.9); /* Escurece o ícone do carro */
+    transform: translateX(-50%); /* Centers horizontally */
+    filter: brightness(0.9); /* Darkens the car icon */
 }
 
 header .subtitle {
     font-size: 14px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     max-width: 300px;
     margin: 0 auto;
 }
 
-/* Mapa */
+/* Map */
 #map {
     height: 400px;
     width: 100%;
@@ -75,7 +75,7 @@ header .subtitle {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Lista de Restaurantes */
+/* Restaurant List */
 .restaurant-list {
     width: 100%;
     max-width: 600px;
@@ -94,8 +94,8 @@ header .subtitle {
 }
 
 #restaurant-list li {
-    background-color: rgb(41, 41, 41); /* Fundo dos itens da lista */
-    color: rgb(223, 233, 233); /* Letras claras */
+    background-color: rgb(41, 41, 41); /* Background color for list items */
+    color: rgb(223, 233, 233); /* Light text */
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 8px;
@@ -106,23 +106,23 @@ header .subtitle {
 
 #restaurant-list li span {
     font-size: 14px;
-    color: #00CC66; /* Verde para o horário de funcionamento */
+    color: #00CC66; /* Green for opening hours */
 }
 
 /* Footer */
 footer {
     text-align: center;
     font-size: 12px;
-    color: rgb(223, 233, 233); /* Letras claras */
+    color: rgb(223, 233, 233); /* Light text */
     margin-top: 24px;
 }
 
-/* Ajustes para rolagem */
+/* Scroll adjustments */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: auto; /* Permite rolagem da página */
+    overflow: auto; /* Allows page scrolling */
 }
 
 main {
@@ -131,5 +131,5 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    overflow-y: auto; /* Permite rolagem interna */
+    overflow-y: auto; /* Allows internal scrolling */
 }

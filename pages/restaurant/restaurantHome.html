@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurants - Uber Community View</title>
-    <!-- Carregando a fonte Roboto do Google Fonts -->
+    <!-- Roboto Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/restaurantStyle.css"> <!-- Caminho corrigido para o CSS -->
+    <link rel="stylesheet" href="../../styles/restaurantStyle.css"> 
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfRrNUyQEiBUDupiVU4qsFll5ukqVrsf8&libraries=places,marker&loading=async&callback=initMap" async defer></script>
     <script type="module" src="firebaseConnection.js"></script>
 
 </head>
 <body>
-    <!-- Imagem de fundo (Uber logo) -->
     <div class="background-image">
         <img src="../../assets/images/uberlogo_white.png" alt="Uber Logo">
     </div>
@@ -26,26 +25,21 @@
     </header>
 
     <main>
-        <!-- Mapa do Google Maps -->
+
         <div id="map" style="height: 400px; width: 100%; margin-bottom: 24px;"></div>
 
-        <!-- Lista de Restaurantes -->
         <div class="restaurant-list">
             <h2>Nearby Restaurants</h2>
             <ul id="restaurant-list">
-                <!-- Os restaurantes serão carregados dinamicamente aqui -->
             </ul>
         </div>
     </main>
 
-    <!-- Linha de quebra -->
     <hr class="divider">
 
     <footer>
         <p>Application Project - Group 10</p>
     </footer>
-
-    <!-- Script para carregar o mapa e a lista de restaurantes -->
     <script src="restaurantScript.js"></script>
 </body>
 </html>

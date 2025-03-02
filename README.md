@@ -1,7 +1,7 @@
 #UberHelper
 Application Project - Group 10 - Fanshawe College
 
-Welcome to UberHelper, a project developed by Group 10 at Fanshawe College. This application is designed to assist users in finding nearby restaurants (currently focused on McDonald's and Burger King) using Google Maps and Firebase for data storage. Below, you'll find all the necessary details to understand, set up, and contribute to the project.
+Welcome to UberHelper, a project developed by Group 10 at Fanshawe College. This application is designed to assist users in finding nearby restaurants (currently focused on McDonald's and Burger King), Gas Stations and mechanics using Google Maps and Firebase for data storage. Below, you'll find all the necessary details to understand, set up, and contribute to the project.
 
 Project Structure
 The project is organized into the following folders and files:

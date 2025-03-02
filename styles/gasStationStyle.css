@@ -66,34 +66,25 @@ header .subtitle {
     margin: 0 auto;
 }
 
-/* Map */
-#map {
-    height: 400px;
-    width: 100%;
-    margin-bottom: 24px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Restaurant List */
-.restaurant-list {
+/* Gas Station List */
+.gasStation-list {
     width: 100%;
     max-width: 600px;
     margin-top: 24px;
 }
 
-.restaurant-list h2 {
+.gasStation-list h2 {
     font-size: 20px;
     color: rgb(223, 233, 233);
     margin-bottom: 16px;
 }
 
-#restaurant-list {
+#gasStation-list {
     list-style: none;
     padding: 0;
 }
 
-#restaurant-list li {
+#gasStation-list li {
     background-color: rgb(41, 41, 41); /* Background color for list items */
     color: rgb(223, 233, 233); /* Light text */
     padding: 12px;
@@ -104,9 +95,22 @@ header .subtitle {
     align-items: center;
 }
 
-#restaurant-list li span {
-    font-size: 14px;
-    color: #00CC66; /* Green for opening hours */
+#gasStation-list li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-icon {
+    width: 24px; /* Size of the link icon */
+    height: 24px;
+    margin-left: 10px; /* Spacing to the left */
+    filter: brightness(0.9); /* Darkens the icon */
+    transition: transform 0.2s ease; /* Hover effect */
+}
+
+.link-icon:hover {
+    transform: scale(1.1); /* Scales the icon on hover */
 }
 
 /* Footer */

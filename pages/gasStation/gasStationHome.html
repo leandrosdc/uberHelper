@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Stations - Uber Community View</title>
+    <!-- Roboto Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/gasStationStyle.css"">
-
-
+    <link rel="stylesheet" href="../../styles/gasStationStyle.css">
 </head>
 <body>
+    <!-- Imagem de fundo -->
     <div class="background-image">
         <img src="../../assets/images/uberlogo_white.png" alt="Uber Logo">
     </div>
 
+    <!-- Cabeçalho -->
     <header>
         <h1>
             Welcom<span class="car-container"><img src="../../assets/images/ubercar_white.PNG" alt="Car Icon" class="car-icon"></span>e, Driver!
         </h1>
-        <p class="subtitle">Find the nearest gas stations with real-time fuel prices and operating hours.</p>
+        <p class="subtitle">Find the best gas stations near you with exclusive discounts and operating hours.</p>
     </header>
 
+    <!-- Conteúdo principal -->
     <main>
-        <!-- <div id="map" style="height: 400px; width: 100%; margin-bottom: 24px;"></div> -->
-
-        <div class="gasstation-list">
+        <!-- Lista de postos de gasolina -->
+        <div class="gasStation-list">
             <h2>Nearby Gas Stations</h2>
-            <ul id="gasstation-list"></ul>
+            <ul id="gasStation-list"></ul>
         </div>
     </main>
 
+    <!-- Divisor -->
     <hr class="divider">
 
+    <!-- Rodapé -->
     <footer>
         <p>Application Project - Group 10</p>
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfRrNUyQEiBUDupiVU4qsFll5ukqVrsf8&libraries=places&v=weekly&callback=initMap" async defer></script>
-    <script src="gasStationScript.js"></script>
+
+    <!-- Scripts -->
+    <script type="module" src="./gasStationScript.js"></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+/* Estilos globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(22, 22, 22); /* Dark background */
+    color: rgb(223, 233, 233); /* Light text */
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagem de fundo (Uber logo) */
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Coloca atrás de todo o conteúdo */
+    opacity: 0.04; /* Deixa a imagem mais suave */
+    width: 80%;
+    max-width: 800px; /* Controla o tamanho da imagem */
+}
+
+.background-image img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.9) opacity(0.8); /* Escurece a imagem */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+}
+
+header h1 {
+    font-size: 24px;
+    color: rgb(223, 233, 233); /* Letras claras */
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-icon {
+    width: 30px; /* Tamanho do ícone do carro */
+    height: auto;
+    position: absolute;
+    top: -20px; /* Posiciona acima das letras */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    filter: brightness(0.9); /* Escurece o ícone do carro */
+}
+
+header .subtitle {
+    font-size: 14px;
+    color: rgb(223, 233, 233); /* Letras claras */
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Lista de mecânicos */
+.mechanic-list {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 24px;
+}
+
+.mechanic-list h2 {
+    font-size: 20px;
+    color: rgb(223, 233, 233);
+    margin-bottom: 16px;
+}
+
+#mechanic-list {
+    list-style: none;
+    padding: 0;
+}
+
+#mechanic-list li {
+    background-color: rgb(41, 41, 41); /* Fundo dos itens da lista */
+    color: rgb(223, 233, 233); /* Letras claras */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mechanic-list li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-icon {
+    width: 24px; /* Tamanho do ícone de link */
+    height: 24px;
+    margin-left: 10px; /* Espaçamento à esquerda */
+    filter: brightness(0.9); /* Escurece o ícone */
+    transition: transform 0.2s ease; /* Efeito de hover */
+}
+
+.link-icon:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: rgb(223, 233, 233); /* Letras claras */
+    margin-top: 24px;
+}
+
+/* Ajustes para rolagem */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Permite rolagem da página */
+}
+
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto; /* Permite rolagem interna */
+}

@@ -1,77 +1,93 @@
+// Import necessary functions from external modules
 import { getMechanics } from "./mechanicFirebaseConnection.js";
 import { getCurrentLocation } from "../shared/mapsConnection.js";
 
-// Função para calcular a distância entre dois pontos geográficos
-function calcularDistancia(lat1, lon1, lat2, lon2) {
-  const R = 6371; // Raio da Terra em quilômetros
-  const dLat = (lat2 - lat1) * (Math.PI / 180);
-  const dLon = (lon2 - lon1) * (Math.PI / 180);
+/**
+ * Calculates the distance between two geographic points using their latitude and longitude.
+ * @param {number} lat1 - Latitude of the first point.
+ * @param {number} lon1 - Longitude of the first point.
+ * @param {number} lat2 - Latitude of the second point.
+ * @param {number} lon2 - Longitude of the second point.
+ * @returns {number} - The distance in kilometers.
+ */
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Earth's radius in kilometers
+  const dLat = (lat2 - lat1) * (Math.PI / 180); // Convert latitude difference to radians
+  const dLon = (lon2 - lon1) * (Math.PI / 180); // Convert longitude difference to radians
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(lat1 * (Math.PI / 180)) *
       Math.cos(lat2 * (Math.PI / 180)) *
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distancia = R * c; // Distância em quilômetros
-  return distancia;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); // Calculate the angular distance
+  const distance = R * c; // Convert to kilometers
+  return distance;
 }
 
-// Função para exibir os mecânicos na lista
-function mostrarMecanicos(data, userLocation) {
+/**
+ * Displays the list of mechanics on the page.
+ * @param {Object} data - The mechanics data retrieved from Firebase.
+ * @param {Object} userLocation - The user's current location (latitude and longitude).
+ */
+function showMechanics(data, userLocation) {
   const mechanicList = document.getElementById("mechanic-list");
-  mechanicList.innerHTML = ""; // Limpa a lista antes de adicionar novos itens
+  mechanicList.innerHTML = ""; // Clear the list before adding new items
 
   if (data) {
-    // Adiciona a distância a cada mecânico
-    const mecanicosComDistancia = Object.values(data).map((mechanic) => {
-      const distancia = calcularDistancia(
+    // Add distance to each mechanic
+    const mechanicsWithDistance = Object.values(data).map((mechanic) => {
+      const distance = calculateDistance(
         userLocation.lat,
         userLocation.lng,
         mechanic.lat,
         mechanic.lng
       );
-      return { ...mechanic, distancia };
+      return { ...mechanic, distance }; // Add distance property to each mechanic
     });
 
-    // Ordena os mecânicos por distância
-    mecanicosComDistancia.sort((a, b) => a.distancia - b.distancia);
+    // Sort mechanics by distance (closest first)
+    mechanicsWithDistance.sort((a, b) => a.distance - b.distance);
 
-    // Limita a lista aos 5 primeiros
-    const top5Mecanicos = mecanicosComDistancia.slice(0, 5);
+    // Limit the list to the top 5 closest mechanics
+    const top5Mechanics = mechanicsWithDistance.slice(0, 5);
 
-    // Exibe os mecânicos na lista
-    top5Mecanicos.forEach((mechanic) => {
+    // Display the mechanics in the list
+    top5Mechanics.forEach((mechanic) => {
       const li = document.createElement("li");
       li.innerHTML = `
         <div>
           <strong>${mechanic.name}</strong><br>
           <span>${mechanic.address}</span><br>
-          <span>Distância: ${mechanic.distancia.toFixed(2)} km</span>
+          <span>Distance: ${mechanic.distance.toFixed(2)} km</span>
         </div>
         <a href="https://www.google.com/maps?q=${mechanic.lat},${mechanic.lng}" target="_blank">
-          <img src="../../assets/images/link_icon.png" alt="Abrir no Google Maps" class="link-icon">
+          <img src="../../assets/images/link_icon.png" alt="Open in Google Maps" class="link-icon">
         </a>
       `;
-      mechanicList.appendChild(li);
+      mechanicList.appendChild(li); // Add the mechanic to the list
     });
   } else {
+    // Display a message if no mechanics are found
     mechanicList.innerHTML = "<p>No mechanics found.</p>";
   }
 }
 
-// Função para carregar os mecânicos
-async function carregarMecanicos() {
+/**
+ * Loads mechanics and displays them on the page.
+ */
+async function loadMechanics() {
   try {
+    // Get the user's current location
     const userLocation = await getCurrentLocation();
-    console.log("Localização atual:", userLocation);
+    console.log("User location: ", userLocation);
 
-    // Busca os mecânicos e exibe na lista
-    getMechanics((data) => mostrarMecanicos(data, userLocation));
+    // Fetch mechanics from Firebase and display them
+    getMechanics((data) => showMechanics(data, userLocation));
   } catch (error) {
-    console.error("Erro ao obter localização:", error);
+    console.error("Error getting user location: ", error);
   }
 }
 
-// Carrega os mecânicos quando a página for carregada
-window.addEventListener("load", carregarMecanicos);
+// Load mechanics when the page is fully loaded
+window.addEventListener("load", loadMechanics);

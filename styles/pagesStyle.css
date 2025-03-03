@@ -1,0 +1,258 @@
+/* ========= Reset and Global Styles ========= */
+/* Remove default margin, padding, and set box-sizing for all elements */
+* {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Ensures padding and border are included in element’s total width and height */
+  }
+  
+  /* Base styles for the body element */
+  body {
+    font-family: 'Roboto', sans-serif; /* Uses Roboto font from Google Fonts */
+    background-color: rgb(22, 22, 22); /* Sets a dark background color */
+    color: rgb(223, 233, 233); /* Sets a light text color */
+    line-height: 1.6; /* Sets line height for readability */
+    padding: 20px; /* Adds padding around the body */
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: column; /* Stacks child elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+    justify-content: center; /* Centers child elements vertically */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    position: relative; /* Establishes a positioning context for absolute elements */
+    overflow: hidden; /* Hides content that overflows the viewport */
+  }
+  
+  /* ========= Background Image Styles ========= */
+  /* Container for the background image (Uber logo) */
+  .background-image {
+    position: absolute; /* Positions the element absolutely within its relative parent */
+    top: 50%; /* Positions the element 50% from the top */
+    left: 50%; /* Positions the element 50% from the left */
+    transform: translate(-50%, -50%); /* Offsets the element to center it */
+    z-index: -1; /* Places the element behind all other content */
+    opacity: 0.04; /* Makes the background image very subtle */
+    width: 80%; /* Sets the container width to 80% */
+    max-width: 800px; /* Limits the maximum width to 800px */
+  }
+  
+  /* Styling for the image within the background container */
+  .background-image img {
+    width: 100%; /* Image takes full width of the container */
+    height: auto; /* Maintains the aspect ratio */
+    filter: brightness(0.9) opacity(0.8); /* Applies brightness and opacity filters to slightly darken the image */
+  }
+  
+  /* ========= Header and Title Styles ========= */
+  /* Styles for the header section */
+  header {
+    text-align: center; /* Centers the text within the header */
+    margin-bottom: 24px; /* Adds space below the header */
+    position: relative; /* Positions header relative to its normal flow for absolute children */
+    z-index: 1; /* Ensures the header is displayed above the background image */
+  }
+  
+  /* Header title (h1) styles */
+  header h1 {
+    font-size: 24px; /* Sets the font size of the title */
+    color: rgb(223, 233, 233); /* Sets the title color to light */
+    margin-bottom: 8px; /* Adds a small space below the title */
+    display: flex; /* Uses Flexbox to align elements inside the title */
+    align-items: center; /* Vertically centers the flex items */
+    justify-content: center; /* Horizontally centers the flex items */
+  }
+  
+  /* Styles for the car icon image inside the header */
+  .car-icon {
+    width: 30px; /* Sets the width of the car icon */
+    height: auto; /* Maintains the icon's aspect ratio */
+    position: absolute; /* Positions the icon absolutely within its container */
+    top: -20px; /* Moves the icon 20px above its normal position */
+    left: 50%; /* Centers the icon horizontally */
+    transform: translateX(-50%); /* Adjusts position to perfectly center the icon */
+    filter: brightness(0.9); /* Slightly darkens the icon */
+  }
+  
+  /* Subtitle text inside the header */
+  header .subtitle {
+    font-size: 14px; /* Sets the font size of the subtitle */
+    color: rgb(223, 233, 233); /* Sets the subtitle text color to light */
+    max-width: 300px; /* Limits the maximum width of the subtitle */
+    margin: 0 auto; /* Centers the subtitle horizontally */
+  }
+  
+  /* ========= Quick Menu Styles ========= */
+  /* Container for the quick navigation menu */
+  .quick-menu {
+    display: flex; /* Uses Flexbox layout for menu items */
+    justify-content: center; /* Centers the menu items horizontally */
+    gap: 10px; /* Sets a gap of 10px between menu items */
+    margin: 10px 0; /* Adds vertical margin above and below the menu */
+  }
+  
+  /* Individual quick menu item styles */
+  .quick-menu-item {
+    background-color: rgb(41, 41, 41); /* Sets background color for the menu item */
+    color: rgb(223, 233, 233); /* Sets text color for the menu item */
+    padding: 6px 12px; /* Adds vertical and horizontal padding */
+    border-radius: 20px; /* Rounds the corners to create a “pill” effect */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 14px; /* Sets the font size of the menu item */
+    transition: background-color 0.3s ease; /* Adds a smooth transition for background color change */
+  }
+  
+  /* Hover effect for quick menu items */
+  .quick-menu-item:hover {
+    background-color: #00CC66; /* Changes background color when hovered */
+  }
+  
+  /* ========= Specific Styles for Gas Stations Page ========= */
+  /* Container for the gas station list */
+  .gasStation-list {
+    width: 100%; /* Uses full available width */
+    max-width: 600px; /* Limits maximum width to 600px */
+    margin-top: 24px; /* Adds space above the gas station list */
+  }
+  
+  /* Title for the gas station list */
+  .gasStation-list h2 {
+    font-size: 20px; /* Sets font size for the list title */
+    color: rgb(223, 233, 233); /* Sets title text color to light */
+    margin-bottom: 16px; /* Adds space below the title */
+  }
+  
+  /* Unordered list for gas stations */
+  #gasStation-list {
+    list-style: none; /* Removes default bullet styling */
+    padding: 0; /* Removes default padding */
+  }
+  
+  /* Styles for individual list items in the gas station list */
+  #gasStation-list li {
+    background-color: rgb(41, 41, 41); /* Sets background color for each list item */
+    color: rgb(223, 233, 233); /* Sets text color to light */
+    padding: 12px; /* Adds inner padding */
+    border-radius: 8px; /* Rounds the corners of each list item */
+    margin-bottom: 8px; /* Adds space between list items */
+    display: flex; /* Uses Flexbox layout for list item content */
+    justify-content: space-between; /* Distributes space between child elements */
+    align-items: center; /* Vertically centers child elements */
+  }
+  
+  /* ========= Specific Styles for Mechanics Page ========= */
+  /* Container for the mechanic list */
+  .mechanic-list {
+    width: 100%; /* Uses full available width */
+    max-width: 600px; /* Limits maximum width to 600px */
+    margin-top: 24px; /* Adds space above the mechanic list */
+  }
+  
+  /* Title for the mechanic list */
+  .mechanic-list h2 {
+    font-size: 20px; /* Sets font size for the list title */
+    color: rgb(223, 233, 233); /* Sets title text color to light */
+    margin-bottom: 16px; /* Adds space below the title */
+  }
+  
+  /* Unordered list for mechanics */
+  #mechanic-list {
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+  }
+  
+  /* Styles for individual list items in the mechanic list */
+  #mechanic-list li {
+    background-color: rgb(41, 41, 41); /* Sets background color for each list item */
+    color: rgb(223, 233, 233); /* Sets text color to light */
+    padding: 12px; /* Adds inner padding */
+    border-radius: 8px; /* Rounds the corners */
+    margin-bottom: 8px; /* Adds space between list items */
+    display: flex; /* Uses Flexbox layout */
+    justify-content: space-between; /* Distributes space between child elements */
+    align-items: center; /* Vertically centers child elements */
+  }
+  
+  /* ========= Specific Styles for Restaurants Page ========= */
+  /* Container for the restaurant list */
+  .restaurant-list {
+    width: 100%; /* Uses full available width */
+    max-width: 600px; /* Limits maximum width to 600px */
+    margin-top: 24px; /* Adds space above the restaurant list */
+  }
+  
+  /* Title for the restaurant list */
+  .restaurant-list h2 {
+    font-size: 20px; /* Sets font size for the list title */
+    color: rgb(223, 233, 233); /* Sets title text color to light */
+    margin-bottom: 16px; /* Adds space below the title */
+  }
+  
+  /* Unordered list for restaurants */
+  #restaurant-list {
+    list-style: none; /* Removes default bullet styling */
+    padding: 0; /* Removes default padding */
+  }
+  
+  /* Styles for individual list items in the restaurant list */
+  #restaurant-list li {
+    background-color: rgb(41, 41, 41); /* Sets background color for each list item */
+    color: rgb(223, 233, 233); /* Sets text color to light */
+    padding: 12px; /* Adds inner padding */
+    border-radius: 8px; /* Rounds the corners */
+    margin-bottom: 8px; /* Adds space between list items */
+    display: flex; /* Uses Flexbox layout */
+    justify-content: space-between; /* Distributes space between child elements */
+    align-items: center; /* Vertically centers child elements */
+  }
+  
+  /* ========= Common Link Icon Styles for All Lists ========= */
+  /* Styles for anchor tags inside the lists (gas station, mechanic, restaurant) */
+  #gasStation-list li a,
+  #mechanic-list li a,
+  #restaurant-list li a {
+    display: flex; /* Uses Flexbox layout for link content */
+    align-items: center; /* Vertically centers the link content */
+    text-decoration: none; /* Removes underline from the links */
+  }
+  
+  /* Styles for the icon used in the links */
+  .link-icon {
+    width: 24px; /* Sets the width of the icon */
+    height: 24px; /* Sets the height of the icon */
+    margin-left: 10px; /* Adds left margin for spacing */
+    filter: brightness(0.9); /* Slightly darkens the icon */
+    transition: transform 0.2s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the link icons */
+  .link-icon:hover {
+    transform: scale(1.1); /* Scales the icon up slightly when hovered */
+  }
+  
+  /* ========= Footer Styles ========= */
+  /* Styles for the footer section */
+  footer {
+    text-align: center; /* Centers footer text */
+    font-size: 12px; /* Sets font size for footer text */
+    color: rgb(223, 233, 233); /* Sets text color to light */
+    margin-top: 24px; /* Adds margin above the footer */
+  }
+  
+  /* ========= Scroll Adjustments ========= */
+  /* Ensure html and body elements occupy full height and allow scrolling if needed */
+  html, body {
+    height: 100%; /* Sets height to 100% of the viewport */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    overflow: auto; /* Enables scrolling for overflowing content */
+  }
+  
+  /* Styles for the main content container */
+  main {
+    flex: 1; /* Allows main content to expand and fill available space */
+    width: 90%; /* Sets width to 90% of available space */
+    max-width: 800px; /* Limits maximum width to 800px */
+    margin: 0 auto; /* Centers main content horizontally */
+    padding: 20px; /* Adds padding inside the main container */
+    overflow-y: auto; /* Enables vertical scrolling for content overflow */
+  }
+  

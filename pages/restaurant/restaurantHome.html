@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Restaurants - Uber Community View</title>
-    <!-- Roboto Google Fonts -->
+
+    <!-- Roboto Google Fonts for a modern and clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/restaurantStyle.css">
+
+    <!-- Link to the CSS file for restaurant page styling -->
+    <link rel="stylesheet" href="../../styles/pagesStyle.css">
 </head>
 <body>
-    <!-- Imagem de fundo -->
+    <!-- Background image with Uber logo -->
     <div class="background-image">
         <img src="../../assets/images/uberlogo_white.png" alt="Uber Logo">
     </div>
 
-    <!-- Cabeçalho -->
     <header>
         <h1>
             Welcom<span class="car-container"><img src="../../assets/images/ubercar_white.PNG" alt="Car Icon" class="car-icon"></span>e, Driver!
         </h1>
-        <p class="subtitle">Find the best restaurants near you with exclusive discounts and operating hours.</p>
+        <p class="subtitle">Find the best gas stations near you with exclusive discounts and operating hours.</p>
+        <br>
+        <!-- Quick Menu -->
+        <nav class="quick-menu">
+            <a href="../gasStation/gasStationHome.html" class="quick-menu-item">Gas Stations</a>
+            <a href="../mechanic/mechanicHome.html" class="quick-menu-item">Mechanics</a>
+        </nav>
     </header>
 
-    <!-- Conteúdo principal -->
+    <!-- Main content section -->
     <main>
-        <!-- Lista de restaurantes -->
+        <!-- Container for the list of restaurants -->
         <div class="restaurant-list">
             <h2>Nearby Restaurants</h2>
+            <!-- Unordered list to display restaurants dynamically -->
             <ul id="restaurant-list"></ul>
         </div>
     </main>
 
-    <!-- Divisor -->
+    <!-- Divider line for visual separation -->
     <hr class="divider">
 
-    <!-- Rodapé -->
+    <!-- Footer section -->
     <footer>
         <p>Application Project - Group 10</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Link to the JavaScript file for restaurant functionality -->
     <script type="module" src="./restaurantScript.js"></script>
 </body>
 </html>

@@ -242,3 +242,12 @@ footer {
         width: 50%; /* Reduz a largura do botão em telas maiores */
     }
 }
+
+
+.disclaimer {
+    font-size: 12px;
+    color: #666; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-style: italic;
+}

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uber Community View</title>
-    <!-- Roboto do Google Fonts -->
+    <!-- Roboto Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/home.css"> <!-- Caminho corrigido para o CSS -->
+    <link rel="stylesheet" href="styles/home.css"> 
+    <script src="popUpScript.js"></script>
 </head>
 <body>
     <div class="background-image">
@@ -23,13 +24,23 @@
     <main>
         <div class="button-container">
             <a href="pages/gasStation/gasStationHome.html" class="btn-primary">Gas Stations</a>
-
             <a href="pages/restaurant/restaurantHome.html" class="btn-primary">Restaurants</a>
-
             <a href="pages/mechanic/mechanicHome.html" class="btn-primary">Mechanics</a>
         </div>
+    
+        <div class="footer-button">
+            <button id="tutorialBtn" class="btn-tutorial">Tutorial</button>
+        </div>
+    
+        <!-- Pop-up Help -->
+        <div id="helpPopup" class="popup">
+            <div class="popup-content">
+                <h2>How it works?</h2>
+                <p>Uber Community View is a platform that connects Uber drivers with local partners, such as restaurants, gas stations, and mechanics, using geolocation. It helps drivers easily find the nearest spots to take a break, plan their trips, grab a meal, or even enjoy exclusive discounts at partner locations.</p>
+                <button id="closePopupBtn" class="btn-primary">Close</button>
+            </div>
+        </div>
     </main>
-
     <hr class="divider">
 
     <footer>

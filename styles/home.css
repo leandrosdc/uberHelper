@@ -132,7 +132,84 @@ footer {
     color: rgb(223, 233, 233); /* Light text */
 }
 
-/* Media Queries for larger screens */
+/* Pop-up styles */
+.popup {
+    display: none; /* Esconde o pop-up inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o pop-up fique acima de tudo */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%; /* Ajusta para mobile */
+    width: 500px; /* Largura máxima para desktop */
+    text-align: center;
+    color: rgb(22, 22, 22); /* Texto escuro */
+}
+
+/* Botão de fechar */
+#closePopupBtn {
+    margin-top: 20px;
+    background-color: rgb(41, 41, 41);
+    border-color: rgb(223, 233, 233);
+    border-style: ridge;
+    color: rgb(223, 233, 233);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#closePopupBtn:hover {
+    background-color: #00CC66;
+    border-color: #00CC66;
+}
+
+/* Botão de Tutorial */
+.btn-tutorial {
+    background-color: rgb(41, 41, 41); /* Mesmo estilo dos outros botões */
+    border-color: rgb(223, 233, 233);
+    border-style: ridge;
+    color: rgb(223, 233, 233); /* Light text */
+    padding: 9px 18px; /* 75% do padding original (12px 24px) */
+    border-radius: 8px;
+    font-size: 12px; /* 75% do tamanho original (16px) */
+    font-weight: 500;
+    cursor: pointer;
+    width: 75%; /* 75% da largura original */
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Adiciona margem para posicionar ao final da página */
+}
+
+.btn-tutorial:hover {
+    background-color: #00CC66; /* Mesmo hover dos outros botões */
+    border-color: #00CC66;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Container do botão de Tutorial */
+.footer-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Aumenta o espaço acima do botão */
+    width: 100%;
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
     header h1 {
         font-size: 32px;
@@ -158,6 +235,10 @@ footer {
     }
 
     .background-image {
-        max-width: 1000px; /* Adjusts the background image size for larger screens */
+        max-width: 1000px; /* Ajusta o tamanho da imagem para telas maiores */
+    }
+
+    .btn-tutorial {
+        width: 50%; /* Reduz a largura do botão em telas maiores */
     }
 }
